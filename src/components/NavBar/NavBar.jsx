@@ -5,7 +5,12 @@ function NavBar() {
   return (
     <div>
       <nav className={classes.navbar}>
-        <div>
+        <a href="#" className={classes.toggledBtn}>
+          <span className={classes.bar}></span>
+          <span className={classes.bar}></span>
+          <span className={classes.bar}></span>
+        </a>
+        <div className={classes.navBarLinks}>
           <ul className={classes.pages}>
             <li>
               <a href="/#">Homepage</a>

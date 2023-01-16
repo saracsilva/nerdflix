@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Nerdflix App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a test challenge for a FrontEnd position. You can use the app by Searching for the title of the movie that you want,and you can also sort the titles by alphabetic order.
 
 ## Available Scripts
 
