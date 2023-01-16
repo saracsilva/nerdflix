@@ -4,17 +4,37 @@
   flex-direction: column;
   align-items: center;
 }
+.nerdflix h1 {
+  align-self: flex-start;
+}
 .list {
   display: flex;
-  gap: calc(1vw + 2vw);
+  /*  gap: calc(1vw + 2vw); */
+  flex-flow: wrap;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 80vw;
+  width: 95vw;
+  height: 100%;
+  padding-top: 5vw;
 }
-.movie {
-  width: 12vw;
-  height: 18vw;
+.nerdflix .movie {
   max-width: 182px;
-  min-height: 268px;
+  max-height: 268px;
+  padding: 3vh 0.3vw;
+  margin: 3vh 0.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+.nerdflix .movie img {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+.movie h5 {
+  font-size: 12px;
+  line-height: 14px;
+  padding: 1vh 0;
+}
+.movie p {
+  opacity: 0.49;
+  font-size: 12px;
 }

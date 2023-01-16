@@ -19,7 +19,16 @@ function NerdFlix(data) {
           })
           .map((movie) => (
             <div key={movie.title} className={classes.movie}>
-              <img src={movie.urlPoster} alt={`${movie.title} image`} />
+              <img
+                src={movie.urlPoster}
+                alt={`${movie.title} image`}
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = "../assets/error_image.png";
+                }}
+              />
+              <h5>{movie.title}</h5>
+              <p>{movie.year}</p>
             </div>
           ))}
       </div>
