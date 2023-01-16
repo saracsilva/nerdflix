@@ -24,7 +24,7 @@ function NavBar() {
           className={classes.logo}
         />{" "}
         <div className={classes.likes}>
-          <img alt="NerdFlix Logo" src="../assets/star_icon.svg" />
+          <img alt="Likes" src="../assets/star_icon.svg" />
           <span>5</span>
         </div>
       </nav>

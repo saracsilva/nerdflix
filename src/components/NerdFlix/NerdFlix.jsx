@@ -18,15 +18,22 @@ function NerdFlix(data) {
             return movie.title.toLowerCase().includes(search.toLowerCase());
           })
           .map((movie) => (
-            <div key={movie.title} className={classes.movie}>
-              <img
-                src={movie.urlPoster}
-                alt={`${movie.title} image`}
-                onError={({ currentTarget }) => {
-                  currentTarget.onerror = null; // prevents looping
-                  currentTarget.src = "../assets/error_image.png";
-                }}
-              />
+            <div key={movie.title} className={classes.movieWrapper}>
+              <div className={classes.imageMovie}>
+                <img
+                  src={movie.urlPoster}
+                  alt={`${movie.title} image`}
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null; // prevents looping
+                    currentTarget.src = "../assets/error_image.png";
+                  }}
+                />
+                <div className={classes.movieHover}>
+                  {" "}
+                  <img alt="Likes" src="../assets/like_icon.svg" />
+                  <h3>{movie.rating}</h3>
+                </div>
+              </div>
               <h5>{movie.title}</h5>
               <p>{movie.year}</p>
             </div>

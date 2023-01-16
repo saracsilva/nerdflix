@@ -16,25 +16,67 @@
   height: 100%;
   padding-top: 5vw;
 }
-.nerdflix .movie {
-  max-width: 182px;
-  max-height: 268px;
+.nerdflix .movieWrapper {
   padding: 3vh 0.3vw;
   margin: 3vh 0.5vw;
+  max-width: 182px;
+
   display: flex;
   flex-direction: column;
   justify-self: center;
 }
-.nerdflix .movie img {
+.movieWrapper > .imageMovie {
+  position: relative;
+  overflow: hidden;
+  max-width: 182px;
+  max-height: 268px;
+}
+.imageMovie > img {
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
+  object-fit: cover;
 }
-.movie h5 {
+.movieWrapper h5 {
   font-size: 12px;
   line-height: 14px;
   padding: 1vh 0;
 }
-.movie p {
+.movieWrapper p {
   opacity: 0.49;
   font-size: 12px;
+}
+.imageMovie > .movieHover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.imageMovie > img,
+.imageMovie > .movieHover {
+  transition: 200ms ease-in-out;
+}
+.imageMovie > .movieHover {
+  opacity: 0;
+}
+.imageMovie:hover > .movieHover {
+  opacity: 1;
+}
+
+.movieHover > img {
+  align-self: flex-end;
+  justify-self: flex-start;
+  height: 10%;
+  padding: 0.5rem;
+}
+.movieHover > h3 {
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  justify-items: center;
+  font-size: 50px;
+  height: 90%;
 }
