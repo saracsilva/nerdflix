@@ -7,17 +7,18 @@ function NerdFlix(data) {
   const [search, setSearch] = useState("");
   return (
     <div className={classes.nerdflix}>
+      <h1>Movies</h1>
       <div>
         <Search search={search} setSearch={setSearch} />
       </div>
-      <h1>{movies[0].title}</h1>
-      <div className="foodBox">
+
+      <div className={classes.list}>
         {movies
           .filter((movie) => {
             return movie.title.toLowerCase().includes(search.toLowerCase());
           })
           .map((movie) => (
-            <div key={movie.title}>
+            <div key={movie.title} className={classes.movie}>
               <img src={movie.urlPoster} alt={`${movie.title} image`} />
             </div>
           ))}
