@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #131313;
+  display: flex;
+  width: 100vw;
+  height: calc(15vh+ 7vh);
+  min-height: 3vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .pages {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin-left: 7vw;
+}
+.navbar .pages a {
+  color: #fff;
+  text-decoration: none;
+}
+.logo {
+  max-width: 5vw;
+}
+.likes {
+  margin-right: 3.5vw;
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+}
