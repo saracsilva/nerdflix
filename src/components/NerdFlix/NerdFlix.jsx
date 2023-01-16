@@ -5,11 +5,45 @@ import classes from "./NerdFlix.module.css";
 function NerdFlix(data) {
   const [movies, setMovies] = useState(data.data.movies);
   const [search, setSearch] = useState("");
+  const [likedMovies, setLikedMovies] = useState(false);
+  const [order, setOrder] = useState("A-Z");
+  const sorting = (title) => {
+    if (order === "A-Z") {
+      const sorted = [...movies].sort((a, b) =>
+        a[title].toLowerCase() > b[title].toLowerCase() ? 1 : -1
+      );
+      setMovies(sorted);
+      setOrder("Z-A");
+    }
+    if (order === "Z-A") {
+      const sorted = [...movies].sort((a, b) =>
+        a[title].toLowerCase() < b[title].toLowerCase() ? 1 : -1
+      );
+      setMovies(sorted);
+      setOrder("A-Z");
+    }
+  };
+
+  let likedImage = "../assets/like_icon.svg";
+  if (likedMovies === false) {
+    likedImage = "../assets/like_icon.svg";
+  } else {
+    likedImage = "../assets/star_icon.svg";
+  }
+  const handleLikes = () => {
+    setLikedMovies(!likedMovies);
+  };
+
   return (
     <div className={classes.nerdflix}>
       <h1>Movies</h1>
       <div>
         <Search search={search} setSearch={setSearch} />
+        <div>
+          {" "}
+          <p>Sort by</p>
+          <button onClick={() => sorting("title")}>Title(A-Z)</button>
+        </div>
       </div>
 
       <div className={classes.list}>
@@ -30,7 +64,9 @@ function NerdFlix(data) {
                 />
                 <div className={classes.movieHover}>
                   {" "}
-                  <img alt="Likes" src="../assets/like_icon.svg" />
+                  <button onClick={handleLikes}>
+                    <img alt="Likes" src={likedImage} />
+                  </button>
                   <h3>{movie.rating}</h3>
                 </div>
               </div>

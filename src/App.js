@@ -7,13 +7,23 @@ import { useState } from "react";
 
 function App() {
   const data = json.data;
+  const [likedMovies, setLikedMovies] = useState(false);
 
   //console.log("test", data);
   return (
     <div className="App">
-      <NavBar />
+      <NavBar likedMovies={likedMovies} setLikedMovies={setLikedMovies} />
       <Routes>
-        <Route path="/" element={<NerdFlix data={data} />} />
+        <Route
+          path="/"
+          element={
+            <NerdFlix
+              data={data}
+              likedMovies={likedMovies}
+              setLikedMovies={setLikedMovies}
+            />
+          }
+        />
       </Routes>
     </div>
   );

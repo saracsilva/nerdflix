@@ -6,6 +6,11 @@
 }
 .nerdflix h1 {
   align-self: flex-start;
+  background-color: #171717;
+  width: 100vw;
+  height: 10vh;
+  padding-left: 5vw;
+  padding-top: 2vh;
 }
 .list {
   display: flex;
@@ -54,6 +59,10 @@
   flex-direction: column;
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.movieHover > button {
+  background: none;
+  border: none;
 }
 .imageMovie > img,
 .imageMovie > .movieHover {

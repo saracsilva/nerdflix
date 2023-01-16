@@ -11,7 +11,7 @@
   display: flex;
   gap: 0.5rem;
   list-style: none;
-  margin-left: 7vw;
+  padding-left: 3.5vw;
 }
 .navbar .pages a {
   color: #fff;
@@ -19,6 +19,7 @@
 }
 .logo {
   max-width: 5vw;
+  justify-self: center;
 }
 .likes {
   margin-right: 3.5vw;
