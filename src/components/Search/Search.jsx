@@ -1,11 +1,18 @@
+import classes from "./Search.module.css";
+
 function Search({ search, setSearch }) {
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
   return (
     <div>
-      <label>Search</label>
-      <input value={search} type="text" onChange={handleSearch} />
+      <input
+        className={classes.inputSearch}
+        value={search}
+        placeholder="Search for a Title"
+        type="text"
+        onChange={handleSearch}
+      />
     </div>
   );
 }

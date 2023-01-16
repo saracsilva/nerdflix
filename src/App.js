@@ -1,4 +1,3 @@
-import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import NerdFlix from "./components/NerdFlix/NerdFlix";
 import { Routes, Route } from "react-router-dom";

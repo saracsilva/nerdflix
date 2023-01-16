@@ -3,11 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
+  height: 100%;
 }
-.nerdflix h1 {
-  align-self: flex-start;
+.nerdflix > .title {
   background-color: #171717;
   width: 100vw;
+}
+.nerdflix > .title > h1 {
+  align-self: flex-start;
+
   height: 10vh;
   padding-left: 5vw;
   padding-top: 2vh;
@@ -19,7 +24,7 @@
   justify-content: center;
   width: 95vw;
   height: 100%;
-  padding-top: 5vw;
+  padding-top: 2vw;
 }
 .nerdflix .movieWrapper {
   padding: 3vh 0.3vw;
@@ -35,6 +40,7 @@
   overflow: hidden;
   max-width: 182px;
   max-height: 268px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
 }
 .imageMovie > img {
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
@@ -88,4 +94,26 @@
   justify-items: center;
   font-size: 50px;
   height: 90%;
+}
+.nerdflix > .header {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-around;
+  z-index: 50;
+
+  margin-top: -45px;
+}
+.sort > p {
+  padding: 1rem 5rem 1rem 0;
+}
+.sort > button {
+  background-color: #131313;
+  border: solid 1px #2e2e2e;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+  color: #fff;
+}
+.sort > button:hover {
+  background-color: #2e2e2e;
 }

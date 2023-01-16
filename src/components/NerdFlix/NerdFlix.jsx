@@ -7,7 +7,7 @@ function NerdFlix(data) {
   const [search, setSearch] = useState("");
   const [likedMovies, setLikedMovies] = useState(false);
   const [order, setOrder] = useState("A-Z");
-  const sorting = (title) => {
+  const sortingAZ = (title) => {
     if (order === "A-Z") {
       const sorted = [...movies].sort((a, b) =>
         a[title].toLowerCase() > b[title].toLowerCase() ? 1 : -1
@@ -15,6 +15,8 @@ function NerdFlix(data) {
       setMovies(sorted);
       setOrder("Z-A");
     }
+  };
+  const sortingZA = (title) => {
     if (order === "Z-A") {
       const sorted = [...movies].sort((a, b) =>
         a[title].toLowerCase() < b[title].toLowerCase() ? 1 : -1
@@ -36,13 +38,18 @@ function NerdFlix(data) {
 
   return (
     <div className={classes.nerdflix}>
-      <h1>Movies</h1>
-      <div>
-        <Search search={search} setSearch={setSearch} />
+      <div className={classes.title}>
+        <h1>Movies</h1>
+      </div>
+      <div className={classes.header}>
         <div>
+          <Search search={search} setSearch={setSearch} />
+        </div>
+        <div className={classes.sort}>
           {" "}
           <p>Sort by</p>
-          <button onClick={() => sorting("title")}>Title(A-Z)</button>
+          <button onClick={() => sortingAZ("title")}>Title(A-Z)</button>
+          <button onClick={() => sortingZA("title")}>Title(Z_A)</button>
         </div>
       </div>
 
