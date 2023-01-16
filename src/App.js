@@ -7,12 +7,11 @@ import { useState } from "react";
 
 function App() {
   const data = json.data;
-  const [movies, setMovies] = useState([data.movies]);
-  console.log(data);
+
+  //console.log("test", data);
   return (
     <div className="App">
       <NavBar />
-      <Header />
       <Routes>
         <Route path="/" element={<NerdFlix data={data} />} />
       </Routes>
